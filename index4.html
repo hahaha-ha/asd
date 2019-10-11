@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 210px;
+				margin: 0 auto;
+				margin-top: 100px;
+				border: 2px solid skyblue;
+				
+			}
+			.q1{
+				display: inline-block;
+			    width: 40px;
+			    height: 30px;
+			    border: 1px solid pink;
+			    
+			}
+			.bgred{
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+	<div class="box">
+		<div class="q1">贝1</div>
+		<div class="q1">贝2</div>
+		<div class="q1">贝3</div>
+		<div class="q1">贝4</div>
+		<div class="q1">贝5</div>
+		<div class="q1">贝6</div>
+		<div class="q1">贝7</div>
+		<div class="q1">贝8</div>
+	</div>
+	<button onclick="start()">开始</button>
+	<button onclick="end()">结束</button>
+		<script>
+			var names =document.getElementsByClassName("q1");
+			var time;
+			//产生随机数  0-9
+			//0.999  0.01   9.9 0.1
+			function start(){
+			 time = setInterval(function(){
+			var num =Math.floor(Math.random()*10);
+			for (var i = 0;i<names.length;i++) {
+				if(i==num){
+					names[num].className="q1 bgred";
+				}else{
+					names[i].className="q1";
+				}
+				
+				}
+			
+			
+			},100)
+			
+			}
+			
+			function end(){
+				clearInterval(time)
+				
+			}
+
+		</script>
+	</body>
+</html>

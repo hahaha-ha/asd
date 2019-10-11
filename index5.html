@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				height: 400px;
+				width: 400px;
+				border: 1px solid pink;
+			}
+			p{
+				font-size: 80px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p id="p1"></p>
+			
+		</div>
+		<button onclick="end();start()">开始</button>
+		<button onclick="end()">结束</button>
+		
+		<script>
+			var stu=["贝吉塔","贝吉塔1","贝吉塔2","贝吉塔3","大幅度","方式","温热若","问问","替换","而是"];
+			var p = document.getElementById("p1");
+			var time;
+			function start(){
+			time=setInterval(function(){
+				num = Math.floor(Math.random()*10);
+				p.innerHTML=stu[num];
+			},100);
+			}
+			function end(){
+				clearInterval(time);
+				
+			}
+		</script>
+	</body>
+</html>

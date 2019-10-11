@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 600px;
+				height: 600px;
+				border:1px solid pink;
+				overflow: hidden;
+				
+			}
+			.box2{
+				width: 600px;
+				height: 30px;
+				border:1px solid hotpink;
+				position: relative;
+				top: -30px;
+				background-color: pink;
+				opacity: 0.5;
+			}
+			span{
+				width: 25px;
+				height: 25px;
+				border: 1px solid deeppink;
+				border-radius: 50%;
+				display: inline-block;
+				text-align: center;
+				font-size: 20px;
+				margin: 0 50px;
+				
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="1.jpg" alt="" />
+			<img src="2.jpg" alt="" />
+			<img src="3.jpg" alt="" />
+			<img src="4.jpg" alt="" />
+		</div>
+		
+		<div class="box2">
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+		</div>
+		
+		<script>
+			var num=0;
+			var imgs= document.getElementsByTagName("img");
+			var spa= document.getElementsByTagName("span");
+			function show(){
+				num++;
+				
+				if(num==imgs.length){
+					num=0
+			}
+				for(var i = 0;i<imgs.length;i++){
+					imgs[i].style.opacity=0.1;
+					spa[i].className="";
+				
+				if(i==num){
+					imgs[num].style.dispaly="block";
+					spa[num].className="bgred";
+				}else{
+					imgs[i].style.dispaly="none";
+					spa[i].className="";
+				}
+			}
+				var op=0;
+				var opcity=setInterval(function(){
+					op++;
+					imgs[num].style.opacity=op/20;
+				    spa[num].className="bgred";
+				if(op>=20){
+					clearInterval(opcity);
+				  }
+				},50)
+				
+		}
+			setInterval(show,1000);
+				
+				
+				
+
+		</script>
+	</body>
+</html>

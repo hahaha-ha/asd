@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid pink;
+			display: inline-block;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="d1"></div>
+		<div class="d1"></div>
+		<div class="d1"></div>
+		<div class="d1"></div>
+		<div class="d1"></div>
+		<div class="d1"></div>
+		<div class="d1"></div>
+		<div class="d1"></div>
+		<div class="d1"></div>
+		<div class="d1"></div>
+		<input type="button" value="开始" id="" onclick="btnstart()" />
+		<input type="button" value="结束" id="" onclick="end()" />
+		
+		<script type="text/javascript">
+			var z=document.getElementsByClassName("d1");
+			
+			var jishi;
+			
+			for(var i=0;i<z.length;i++){
+				z[i].innerHTML =0;
+			}
+				function btnstart(){
+					
+				var jishi = setInterval(star,1000);
+				
+			function star(){
+				
+				
+				for(var i=0;i<z.length;i++){
+				z[i].innerHTML = Math.floor(Math.random()*10);
+			}
+				
+			}
+			}
+			function end(){
+				clearInterval(jishi);
+			}
+		</script>
+	</body>
+</html>
